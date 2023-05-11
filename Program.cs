@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ASCII转换进制转换
+namespace 测试工具助手
 {
     static class Program
     {

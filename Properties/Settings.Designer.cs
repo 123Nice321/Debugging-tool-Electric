@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASCII转换进制转换.Properties {
+namespace 测试工具助手.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
