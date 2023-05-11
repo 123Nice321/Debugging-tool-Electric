@@ -15,7 +15,7 @@ namespace 测试工具助手
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new 测试工具合集());
         }
     }
 }
