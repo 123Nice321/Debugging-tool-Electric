@@ -130,6 +130,8 @@ namespace 测试工具助手
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.button12 = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
@@ -170,8 +172,13 @@ namespace 测试工具助手
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.S_Photo = new System.Windows.Forms.PictureBox();
+            this.text_image = new System.Windows.Forms.TextBox();
+            this.but_image = new System.Windows.Forms.Button();
+            this.but_image选择 = new System.Windows.Forms.Button();
+            this.Img_Clear = new System.Windows.Forms.Button();
+            this.Sut_Save = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -204,6 +211,8 @@ namespace 测试工具助手
             this.Box数据表.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -472,7 +481,7 @@ namespace 测试工具助手
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1058, 679);
+            this.tabControl1.Size = new System.Drawing.Size(1139, 692);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage2
@@ -1211,6 +1220,7 @@ namespace 测试工具助手
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.groupBox10);
             this.tabPage6.Controls.Add(this.tabControl2);
             this.tabPage6.Controls.Add(this.but断开数据库);
             this.tabPage6.Controls.Add(this.but帮助说明);
@@ -1223,7 +1233,7 @@ namespace 测试工具助手
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1050, 646);
+            this.tabPage6.Size = new System.Drawing.Size(1131, 659);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "数据库工具";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1329,6 +1339,22 @@ namespace 测试工具助手
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "还原数据库";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 68);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(71, 16);
+            this.label32.TabIndex = 5;
+            this.label32.Text = "新命名：";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(84, 65);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(97, 26);
+            this.textBox16.TabIndex = 4;
             // 
             // button14
             // 
@@ -1683,7 +1709,7 @@ namespace 测试工具助手
             this.Box数据表.Margin = new System.Windows.Forms.Padding(2);
             this.Box数据表.Name = "Box数据表";
             this.Box数据表.Padding = new System.Windows.Forms.Padding(2);
-            this.Box数据表.Size = new System.Drawing.Size(982, 362);
+            this.Box数据表.Size = new System.Drawing.Size(662, 419);
             this.Box数据表.TabIndex = 13;
             this.Box数据表.TabStop = false;
             this.Box数据表.Text = "数据表单";
@@ -1695,7 +1721,7 @@ namespace 测试工具助手
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(964, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(624, 380);
             this.dataGridView1.TabIndex = 0;
             // 
             // serialPort1
@@ -1713,9 +1739,9 @@ namespace 测试工具助手
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 690);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 697);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1111, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1163, 22);
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Tag = "底部显示状态栏";
             this.statusStrip1.Text = "statusStrip1";
@@ -1755,21 +1781,77 @@ namespace 测试工具助手
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Tag = "数据库工具用";
             // 
-            // textBox16
+            // groupBox10
             // 
-            this.textBox16.Location = new System.Drawing.Point(84, 65);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(97, 26);
-            this.textBox16.TabIndex = 4;
+            this.groupBox10.Controls.Add(this.Sut_Save);
+            this.groupBox10.Controls.Add(this.Img_Clear);
+            this.groupBox10.Controls.Add(this.but_image选择);
+            this.groupBox10.Controls.Add(this.but_image);
+            this.groupBox10.Controls.Add(this.text_image);
+            this.groupBox10.Controls.Add(this.S_Photo);
+            this.groupBox10.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox10.Location = new System.Drawing.Point(672, 163);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(453, 491);
+            this.groupBox10.TabIndex = 22;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "image格式转换成图片";
             // 
-            // label32
+            // S_Photo
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 68);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(71, 16);
-            this.label32.TabIndex = 5;
-            this.label32.Text = "新命名：";
+            this.S_Photo.Location = new System.Drawing.Point(14, 98);
+            this.S_Photo.Name = "S_Photo";
+            this.S_Photo.Size = new System.Drawing.Size(433, 387);
+            this.S_Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.S_Photo.TabIndex = 0;
+            this.S_Photo.TabStop = false;
+            // 
+            // text_image
+            // 
+            this.text_image.Location = new System.Drawing.Point(10, 24);
+            this.text_image.Name = "text_image";
+            this.text_image.Size = new System.Drawing.Size(437, 26);
+            this.text_image.TabIndex = 1;
+            // 
+            // but_image
+            // 
+            this.but_image.Location = new System.Drawing.Point(326, 56);
+            this.but_image.Name = "but_image";
+            this.but_image.Size = new System.Drawing.Size(112, 33);
+            this.but_image.TabIndex = 2;
+            this.but_image.Text = "转换";
+            this.but_image.UseVisualStyleBackColor = true;
+            this.but_image.Click += new System.EventHandler(this.but_image_Click);
+            // 
+            // but_image选择
+            // 
+            this.but_image选择.Location = new System.Drawing.Point(10, 56);
+            this.but_image选择.Name = "but_image选择";
+            this.but_image选择.Size = new System.Drawing.Size(112, 33);
+            this.but_image选择.TabIndex = 3;
+            this.but_image选择.Text = "选择照片";
+            this.but_image选择.UseVisualStyleBackColor = true;
+            this.but_image选择.Click += new System.EventHandler(this.but_image选择_Click);
+            // 
+            // Img_Clear
+            // 
+            this.Img_Clear.Location = new System.Drawing.Point(128, 56);
+            this.Img_Clear.Name = "Img_Clear";
+            this.Img_Clear.Size = new System.Drawing.Size(74, 33);
+            this.Img_Clear.TabIndex = 69;
+            this.Img_Clear.Text = "清除";
+            this.Img_Clear.UseVisualStyleBackColor = true;
+            this.Img_Clear.Click += new System.EventHandler(this.Img_Clear_Click);
+            // 
+            // Sut_Save
+            // 
+            this.Sut_Save.Location = new System.Drawing.Point(208, 56);
+            this.Sut_Save.Name = "Sut_Save";
+            this.Sut_Save.Size = new System.Drawing.Size(67, 33);
+            this.Sut_Save.TabIndex = 70;
+            this.Sut_Save.Text = "保存";
+            this.Sut_Save.UseVisualStyleBackColor = true;
+            this.Sut_Save.Click += new System.EventHandler(this.Sut_Save_Click);
             // 
             // 测试工具合集
             // 
@@ -1777,7 +1859,7 @@ namespace 测试工具助手
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1111, 712);
+            this.ClientSize = new System.Drawing.Size(1163, 719);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
@@ -1837,6 +1919,9 @@ namespace 测试工具助手
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1985,6 +2070,13 @@ namespace 测试工具助手
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Button but_image;
+        private System.Windows.Forms.TextBox text_image;
+        private System.Windows.Forms.PictureBox S_Photo;
+        private System.Windows.Forms.Button but_image选择;
+        private System.Windows.Forms.Button Img_Clear;
+        private System.Windows.Forms.Button Sut_Save;
     }
 }
 

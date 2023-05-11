@@ -896,8 +896,58 @@ namespace 测试工具助手
             }
         }
 
+
         #endregion
 
 
+        public static byte[] imgBytesIn;  //用来存储图片的二进制数
+        private void but_image_Click(object sender, EventArgs e)
+        {
+            
+            //MemoryStream ms = new MemoryStream();
+
+            //Bitmap bmpt = new Bitmap(ms);   //将二进制流转化成图片格式
+
+            //S_Photo.Image = bmpt;   //SickPicture为pictureBox控件名称
+        }
+        #region  将图片转换成字节数组
+        public void Read_Image(OpenFileDialog openF, PictureBox MyImage)
+        {
+            openF.Filter = "*.jpg|*.jpg|*.bmp|*.bmp";   //指定OpenFileDialog控件打开的文件格式
+            if (openF.ShowDialog(this) == DialogResult.OK)  //如果打开了图片文件
+            {
+                try
+                {
+                    MyImage.Image = System.Drawing.Image.FromFile(openF.FileName);  //将图片文件存入到PictureBox控件中
+                    string strimg = openF.FileName.ToString();  //记录图片的所在路径
+                    FileStream fs = new FileStream(strimg, FileMode.Open, FileAccess.Read); //将图片以文件流的形式进行保存
+                    BinaryReader br = new BinaryReader(fs);
+                    imgBytesIn = br.ReadBytes((int)fs.Length);  //将流读入到字节数组中
+                }
+                catch
+                {
+                    MessageBox.Show("您选择的图片不能被读取或文件类型不对！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    S_Photo.Image = null;
+                }
+            }
+        }
+        #endregion
+
+        private void but_image选择_Click(object sender, EventArgs e)
+        {
+            Read_Image(openFileDialog1, S_Photo);
+        }
+
+        private void Img_Clear_Click(object sender, EventArgs e)
+        {
+            S_Photo.Image = null;
+            imgBytesIn = new byte[65536];
+        }
+
+        private void Sut_Save_Click(object sender, EventArgs e)
+        {
+            //通过MyModule公共类中r的SaveImage()方法将图片存入数据库中
+            MyMC.SaveImage("1", imgBytesIn);
+        }
     }
 }

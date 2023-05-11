@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace 测试工具助手.MyClass
 {
@@ -818,17 +819,19 @@ namespace 测试工具助手.MyClass
         /// <summary>
         /// 以二进制的形式将图片存储到数据库中.
         /// </summary>
-        /// <param name="MID">职工编号</param>
+        /// <param name="MID">编号</param>
         /// <param name="p">图片的二进制形式</param>
-        public void SaveImage(string MID, byte[] p)
+        public void SaveImage(string MID,byte[] p)
         {
             MyDataClass.con_open(MyClass.MyMeans.M_str_sqlcon);
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("update dbo.parkinggarage Set 入库照片=@入库照片 where 入库序号=" + MID);
+            //strSql.Append
+            strSql.Append("update Stuffbasic1 Set Photo=@Photo where ID=" + MID);
             SqlCommand cmd = new SqlCommand(strSql.ToString(), MyMeans.My_con);
-            cmd.Parameters.Add("@Photo", SqlDbType.Binary).Value = p;
+            cmd.Parameters.Add("@Photo ", SqlDbType.Binary).Value = p;
             cmd.ExecuteNonQuery();
             MyMeans.My_con.Close();
+
         }
         #endregion
 
