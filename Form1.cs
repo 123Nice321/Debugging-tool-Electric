@@ -61,34 +61,43 @@ namespace ASCII转换进制转换
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(comboBox1.Text=="二进制")
+            try
             {
-                int int1 = Convert.ToInt32(textBox7.Text);
-                textBox3.Text = Convert.ToString(int1,2);
-                //textBox4.Text = Convert.ToString(int1,8);
-                textBox5.Text = Convert.ToString(int1,10);
-                textBox6.Text = Convert.ToString(int1,16).ToUpper();
+                if (comboBox1.Text == "二进制")
+                {
+                    string str = textBox7.Text;
+
+                    textBox3.Text = Convert.ToString(str);
+                    //textBox4.Text = Convert.ToString(int1,8);
+                    textBox5.Text = Convert.ToString(Convert.ToInt32(str, 2));
+                    textBox6.Text = Convert.ToString(Convert.ToInt32(textBox5.Text), 16).ToUpper();
+                }
+                //if (comboBox1.Text == "八进制")
+                //{
+                //    string str = textBox7.Text;
+                //}
+                if (comboBox1.Text == "十进制")
+                {
+                    string str = textBox7.Text;
+                    textBox5.Text = str;//十进制转十进制数
+                                        //textBox4.Text = Convert.ToInt32(str, 8).ToString();//十进制转八进制数
+                    textBox3.Text = Convert.ToString(Convert.ToInt32(str), 2);//十进制转二进制数
+                    textBox6.Text = Convert.ToString(Convert.ToInt32(str), 16).ToUpper();//十进制转二进制数
+                }
+                if (comboBox1.Text == "十六进制")
+                {
+                    string str = textBox7.Text;
+                    textBox5.Text = Convert.ToInt32(str, 16).ToString().ToUpper();//十六进制转十进制数
+                                                                                  //textBox4.Text = Convert.ToInt32(textBox5.Text,8).ToString();//十进制转八进制数
+                    textBox3.Text = Convert.ToString(Convert.ToInt32(textBox5.Text), 2);//十进制转二进制数
+                    textBox6.Text = textBox7.Text.ToUpper();//十六进制转十六进制数
+                }
             }
-            //if (comboBox1.Text == "八进制")
-            //{
-            //    string str = textBox7.Text;
-            //}
-            if (comboBox1.Text == "十进制")
+            catch(Exception ex)
             {
-                string str = textBox7.Text;
-                textBox5.Text = str;//十进制转十进制数
-                //textBox4.Text = Convert.ToInt32(str, 8).ToString();//十进制转八进制数
-                textBox3.Text = Convert.ToString(Convert.ToInt32(str), 2);//十进制转二进制数
-                textBox6.Text= Convert.ToString(Convert.ToInt32(str), 16).ToUpper();//十进制转二进制数
+                MessageBox.Show(ex.Message);
             }
-            if (comboBox1.Text == "十六进制")
-            {
-                string str = textBox7.Text;
-                textBox5.Text = Convert.ToInt32(str,16).ToString().ToUpper();//十六进制转十进制数
-                //textBox4.Text = Convert.ToInt32(textBox5.Text,8).ToString();//十进制转八进制数
-                textBox3.Text = Convert.ToString(Convert.ToInt32( textBox5.Text),2);//十进制转二进制数
-                textBox6.Text = textBox7.Text.ToUpper();//十六进制转十六进制数
-            }
+           
         }//进制转换
 
         private void button4_Click_1(object sender, EventArgs e)
