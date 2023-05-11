@@ -172,9 +172,7 @@ namespace 测试工具助手
         }//字符串转UNICODE
         #endregion
 
-
-
-
+        #region 简单串口调试工具
         private long receive_count = 0; //接收字节计数, 作用相当于全局变量
         private long send_count = 0;//发送字节计数, 作用相当于全局变量
         private StringBuilder sb = new StringBuilder();     //为了避免在接收处理函数中反复调用，依然声明为一个全局变量
@@ -410,13 +408,13 @@ namespace 测试工具助手
                     {
                         //显示时间
                         current_time = System.DateTime.Now;     //获取当前时间
-                        textBox_receive.AppendText(current_time.ToString("HH:mm:ss") + "  " + sb.ToString());
+                        textBox_receive.AppendText("调试时间 "+current_time.ToString("HH:mm:ss") + " 数据 " + sb.ToString()+"\r\n");
 
                     }
                     else
                     {
                         //不显示时间 
-                        textBox_receive.AppendText(sb.ToString());
+                        textBox_receive.AppendText(" 数据 " + sb.ToString()+"\r\n");
                     }
                     label12.Text = "Rx:" + receive_count.ToString() + "Bytes";
                 }
@@ -468,5 +466,8 @@ namespace 测试工具助手
             //定时时间到
             button7_Click(button7, new EventArgs());    //调用发送按钮回调函数
         }
+        #endregion
+
+
     }
 }

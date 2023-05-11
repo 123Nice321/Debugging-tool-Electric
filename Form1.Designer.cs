@@ -56,10 +56,26 @@ namespace 测试工具助手
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox_send = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBox_receive = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.but连接串口按钮 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -73,22 +89,6 @@ namespace 测试工具助手
             this.com校验位 = new System.Windows.Forms.ComboBox();
             this.com串口名 = new System.Windows.Forms.ComboBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox_receive = new System.Windows.Forms.TextBox();
-            this.textBox_send = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -100,9 +100,9 @@ namespace 测试工具助手
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -398,6 +398,25 @@ namespace 测试工具助手
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "发送区";
             // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("楷体", 14F);
+            this.button7.Location = new System.Drawing.Point(714, 91);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(77, 35);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "发送";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // textBox_send
+            // 
+            this.textBox_send.Location = new System.Drawing.Point(6, 19);
+            this.textBox_send.Multiline = true;
+            this.textBox_send.Name = "textBox_send";
+            this.textBox_send.Size = new System.Drawing.Size(702, 176);
+            this.textBox_send.TabIndex = 0;
+            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.textBox_receive);
@@ -408,6 +427,16 @@ namespace 测试工具助手
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "接收区";
+            // 
+            // textBox_receive
+            // 
+            this.textBox_receive.AcceptsReturn = true;
+            this.textBox_receive.Location = new System.Drawing.Point(6, 20);
+            this.textBox_receive.Multiline = true;
+            this.textBox_receive.Name = "textBox_receive";
+            this.textBox_receive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_receive.Size = new System.Drawing.Size(785, 350);
+            this.textBox_receive.TabIndex = 0;
             // 
             // groupBox7
             // 
@@ -424,6 +453,47 @@ namespace 测试工具助手
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "串口实时状态";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("楷体", 12F);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label13.Location = new System.Drawing.Point(936, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 16);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "@Wang V1.0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("楷体", 13F);
+            this.label12.Location = new System.Drawing.Point(521, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "RX:0Bytes";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("楷体", 13F);
+            this.label6.Location = new System.Drawing.Point(388, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 18);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "TX:0Bytes";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("楷体", 13F);
+            this.label5.Location = new System.Drawing.Point(15, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 18);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "label5";
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.numericUpDown1);
@@ -439,6 +509,66 @@ namespace 测试工具助手
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "发送设置";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(137, 88);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(76, 26);
+            this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(30, 94);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(90, 20);
+            this.checkBox3.TabIndex = 5;
+            this.checkBox3.Text = "自动发送";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(30, 67);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(90, 20);
+            this.checkBox2.TabIndex = 4;
+            this.checkBox2.Text = "发送新行";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(122, 25);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(49, 20);
+            this.radioButton3.TabIndex = 3;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "HEX";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(30, 25);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(65, 20);
+            this.radioButton4.TabIndex = 2;
+            this.radioButton4.Text = "ASCII";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.button6);
@@ -452,6 +582,49 @@ namespace 测试工具助手
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "接收设置";
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("楷体", 14F);
+            this.button6.Location = new System.Drawing.Point(47, 109);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(114, 35);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "清空接收";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(48, 74);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(122, 20);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "显示接收时间";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(128, 34);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(49, 20);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "HEX";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(36, 34);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(65, 20);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.Text = "ASCII";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -589,168 +762,6 @@ namespace 测试工具助手
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(36, 34);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "ASCII";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(128, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(49, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "HEX";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(122, 25);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(49, 20);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "HEX";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(30, 25);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(65, 20);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.Text = "ASCII";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(48, 74);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(122, 20);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "显示接收时间";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("楷体", 14F);
-            this.button6.Location = new System.Drawing.Point(47, 109);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 35);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "清空接收";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // textBox_receive
-            // 
-            this.textBox_receive.Location = new System.Drawing.Point(6, 20);
-            this.textBox_receive.Multiline = true;
-            this.textBox_receive.Name = "textBox_receive";
-            this.textBox_receive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_receive.Size = new System.Drawing.Size(785, 350);
-            this.textBox_receive.TabIndex = 0;
-            // 
-            // textBox_send
-            // 
-            this.textBox_send.Location = new System.Drawing.Point(6, 19);
-            this.textBox_send.Multiline = true;
-            this.textBox_send.Name = "textBox_send";
-            this.textBox_send.Size = new System.Drawing.Size(702, 176);
-            this.textBox_send.TabIndex = 0;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("楷体", 14F);
-            this.button7.Location = new System.Drawing.Point(714, 91);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(77, 35);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "发送";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(30, 67);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(90, 20);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "发送新行";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(30, 94);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(90, 20);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "自动发送";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(137, 88);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(76, 26);
-            this.numericUpDown1.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("楷体", 13F);
-            this.label5.Location = new System.Drawing.Point(15, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 18);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "label5";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("楷体", 13F);
-            this.label6.Location = new System.Drawing.Point(388, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 18);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "TX:0Bytes";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("楷体", 13F);
-            this.label12.Location = new System.Drawing.Point(521, 22);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 18);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "RX:0Bytes";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("楷体", 12F);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label13.Location = new System.Drawing.Point(936, 31);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 16);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "@Wang V1.0";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -785,11 +796,11 @@ namespace 测试工具助手
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
