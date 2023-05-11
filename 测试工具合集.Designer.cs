@@ -122,6 +122,11 @@ namespace 测试工具助手
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+<<<<<<< HEAD
+=======
+            this.label33 = new System.Windows.Forms.Label();
+            this.Sut_Delete = new System.Windows.Forms.Button();
+>>>>>>> 添加项目文件。
             this.Sut_Save = new System.Windows.Forms.Button();
             this.Img_Clear = new System.Windows.Forms.Button();
             this.but_image选择 = new System.Windows.Forms.Button();
@@ -180,6 +185,7 @@ namespace 测试工具助手
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.S_Photo = new System.Windows.Forms.PictureBox();
             this.text_image = new System.Windows.Forms.TextBox();
@@ -190,6 +196,8 @@ namespace 测试工具助手
 =======
             this.Sut_Delete = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
+>>>>>>> 添加项目文件。
+=======
 >>>>>>> 添加项目文件。
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -225,8 +233,6 @@ namespace 测试工具助手
             this.Box数据表.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -1256,11 +1262,18 @@ namespace 测试工具助手
             // 
             this.groupBox10.Controls.Add(this.label33);
             this.groupBox10.Controls.Add(this.Sut_Delete);
+<<<<<<< HEAD
+=======
+            this.groupBox10.Controls.Add(this.text_S0);
+>>>>>>> 添加项目文件。
             this.groupBox10.Controls.Add(this.Sut_Save);
             this.groupBox10.Controls.Add(this.Img_Clear);
             this.groupBox10.Controls.Add(this.but_image选择);
             this.groupBox10.Controls.Add(this.but_image);
+<<<<<<< HEAD
             this.groupBox10.Controls.Add(this.text_S0);
+=======
+>>>>>>> 添加项目文件。
             this.groupBox10.Controls.Add(this.S_Photo);
             this.groupBox10.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox10.Location = new System.Drawing.Point(672, 163);
@@ -1270,6 +1283,7 @@ namespace 测试工具助手
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "image格式转换成图片";
             // 
+<<<<<<< HEAD
             // Sut_Save
             // 
             this.Sut_Save.Location = new System.Drawing.Point(208, 26);
@@ -1277,12 +1291,44 @@ namespace 测试工具助手
             this.Sut_Save.Size = new System.Drawing.Size(67, 33);
             this.Sut_Save.TabIndex = 70;
             this.Sut_Save.Text = "添加";
+=======
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(16, 462);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(23, 16);
+            this.label33.TabIndex = 73;
+            this.label33.Text = "ID";
+            // 
+            // Sut_Delete
+            // 
+            this.Sut_Delete.Location = new System.Drawing.Point(135, 455);
+            this.Sut_Delete.Name = "Sut_Delete";
+            this.Sut_Delete.Size = new System.Drawing.Size(109, 30);
+            this.Sut_Delete.TabIndex = 72;
+            this.Sut_Delete.Text = "删除数据库";
+            this.Sut_Delete.UseVisualStyleBackColor = true;
+            this.Sut_Delete.Click += new System.EventHandler(this.Sut_Delete_Click);
+            // 
+            // Sut_Save
+            // 
+            this.Sut_Save.Location = new System.Drawing.Point(208, 25);
+            this.Sut_Save.Name = "Sut_Save";
+            this.Sut_Save.Size = new System.Drawing.Size(67, 33);
+            this.Sut_Save.TabIndex = 70;
+            this.Sut_Save.Text = "保存";
+>>>>>>> 添加项目文件。
             this.Sut_Save.UseVisualStyleBackColor = true;
             this.Sut_Save.Click += new System.EventHandler(this.Sut_Save_Click);
             // 
             // Img_Clear
             // 
+<<<<<<< HEAD
             this.Img_Clear.Location = new System.Drawing.Point(128, 26);
+=======
+            this.Img_Clear.Location = new System.Drawing.Point(128, 25);
+>>>>>>> 添加项目文件。
             this.Img_Clear.Name = "Img_Clear";
             this.Img_Clear.Size = new System.Drawing.Size(74, 33);
             this.Img_Clear.TabIndex = 69;
@@ -1292,7 +1338,11 @@ namespace 测试工具助手
             // 
             // but_image选择
             // 
+<<<<<<< HEAD
             this.but_image选择.Location = new System.Drawing.Point(10, 26);
+=======
+            this.but_image选择.Location = new System.Drawing.Point(6, 24);
+>>>>>>> 添加项目文件。
             this.but_image选择.Name = "but_image选择";
             this.but_image选择.Size = new System.Drawing.Size(112, 33);
             this.but_image选择.TabIndex = 3;
@@ -1302,26 +1352,44 @@ namespace 测试工具助手
             // 
             // but_image
             // 
+<<<<<<< HEAD
             this.but_image.Location = new System.Drawing.Point(326, 26);
             this.but_image.Name = "but_image";
             this.but_image.Size = new System.Drawing.Size(112, 33);
             this.but_image.TabIndex = 2;
             this.but_image.Text = "查看";
+=======
+            this.but_image.Location = new System.Drawing.Point(325, 24);
+            this.but_image.Name = "but_image";
+            this.but_image.Size = new System.Drawing.Size(112, 33);
+            this.but_image.TabIndex = 2;
+            this.but_image.Text = "转换";
+>>>>>>> 添加项目文件。
             this.but_image.UseVisualStyleBackColor = true;
             this.but_image.Click += new System.EventHandler(this.but_image_Click);
             // 
             // text_S0
             // 
+<<<<<<< HEAD
             this.text_S0.Location = new System.Drawing.Point(52, 451);
+=======
+            this.text_S0.Location = new System.Drawing.Point(48, 459);
+>>>>>>> 添加项目文件。
             this.text_S0.Name = "text_S0";
             this.text_S0.Size = new System.Drawing.Size(70, 26);
             this.text_S0.TabIndex = 1;
             // 
             // S_Photo
             // 
+<<<<<<< HEAD
             this.S_Photo.Location = new System.Drawing.Point(14, 72);
             this.S_Photo.Name = "S_Photo";
             this.S_Photo.Size = new System.Drawing.Size(433, 369);
+=======
+            this.S_Photo.Location = new System.Drawing.Point(14, 64);
+            this.S_Photo.Name = "S_Photo";
+            this.S_Photo.Size = new System.Drawing.Size(433, 389);
+>>>>>>> 添加项目文件。
             this.S_Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.S_Photo.TabIndex = 0;
             this.S_Photo.TabStop = false;
@@ -1870,6 +1938,7 @@ namespace 测试工具助手
             this.openFileDialog1.Tag = "数据库工具用";
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.Sut_Save);
@@ -1962,6 +2031,8 @@ namespace 测试工具助手
             this.label33.Text = "ID";
 >>>>>>> 添加项目文件。
             // 
+=======
+>>>>>>> 添加项目文件。
             // 测试工具合集
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2031,9 +2102,6 @@ namespace 测试工具助手
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2185,19 +2253,31 @@ namespace 测试工具助手
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button but_image;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox text_image;
 =======
         private System.Windows.Forms.TextBox text_S0;
+>>>>>>> 添加项目文件。
+=======
+
+        private System.Windows.Forms.TextBox text_S0;
+
 >>>>>>> 添加项目文件。
         private System.Windows.Forms.PictureBox S_Photo;
         private System.Windows.Forms.Button but_image选择;
         private System.Windows.Forms.Button Img_Clear;
         private System.Windows.Forms.Button Sut_Save;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         private System.Windows.Forms.Button Sut_Delete;
         private System.Windows.Forms.Label label33;
 >>>>>>> 添加项目文件。
+=======
+
+        private System.Windows.Forms.Button Sut_Delete;
+        private System.Windows.Forms.Label label33;
+
+>>>>>>> 添加项目文件。
     }
 }
-
