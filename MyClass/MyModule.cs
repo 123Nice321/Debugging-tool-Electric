@@ -57,7 +57,86 @@ namespace 测试工具助手.MyClass
         }
         #endregion
 
+        #region  将图片存储到数据库中
+        /// <summary>
+        /// 以二进制的形式将图片存储到数据库中.
+        /// </summary>
+        /// <param name="MID">编号</param>
+        /// <param name="p">图片的二进制形式</param>
+        public void SaveImage(string MID, byte[] p)
+        {
+            MyDataClass.con_open(MyClass.MyMeans.M_str_sqlcon);
+            StringBuilder strSql = new StringBuilder();
+            //strSql.Append
+            strSql.Append("update Stuffbasic1 Set Photo=@Photo where ID=" + MID);
 
+            SqlCommand cmd = new SqlCommand(strSql.ToString(), MyMeans.My_con);
+            cmd.Parameters.Add("@Photo ", SqlDbType.Binary).Value = p;
+            cmd.ExecuteNonQuery();
+            MyMeans.My_con.Close();
+
+        }
+        #endregion
+
+        #region  自动编号
+        /// <summary>
+        /// 在添加信息时自动计算编号.
+        /// </summary>
+        /// <param name="TableName">表名</param>
+        /// <param name="ID">字段名</param>
+        /// <returns>返回String对象</returns>
+        public String GetAutocoding(string TableName, string ID)
+        {
+            //查找指定表中ID号为最大的记录
+            SqlDataReader MyDR = MyDataClass.getcom("select max(" + ID + ") NID from " + TableName);
+            int Num = 0;
+            if (MyDR.HasRows)   //当查找到记录时
+            {
+                MyDR.Read();    //读取当前记录
+                if (MyDR[0].ToString() == "")
+                    return "0001";
+                Num = Convert.ToInt32(MyDR[0].ToString());  //将当前找到的最大编号转换成整数
+                ++Num;  //最大编号加1
+                string s = string.Format("{0:0000}", Num);  //将整数值转换成指定格式的字符串
+                return s;   //返回自动生成的编号
+            }
+            else
+            {
+                return "0001";  //当数据表没有记录时，返回0001
+            }
+
+
+        }
+        #endregion
+
+        #region  保存添加或修改的信息
+        /// <summary>
+        /// 保存添加或修改的信息.
+        /// </summary>
+        /// <param name="Sarr">数据表中的所有字段</param>
+        /// <param name="ID1">第一个字段值</param>
+        /// <param name="ID2">第二个字段值</param>
+        /// <param name="Contr">指定控件的数据集</param>
+        /// <param name="BoxName">要搜索的控件名称</param>
+        /// <param name="TableName">数据表名称</param>
+        /// <param name="n">控件的个数</param>
+        /// <param name="m">标识，用于判断是添加还是修改</param>
+        public void Part_SaveClass( string ID1,string TableName)
+        {
+            string tem_Field = "", tem_Value = "";
+
+            tem_Field = "ID";
+            tem_Value = "'" + ID1 + "'";
+            //生成SQL的添加语句
+            ADDs = "insert into " + TableName + " (" + tem_Field + ") values(" + tem_Value + ")";
+                //if (m == 2) //生成SQL的修改语句
+                //    if (ID2 == "")  //根据ID2参数，判断修改语句的条件
+                //        ADDs = "update " + TableName + " set " + tem_Value + " where 序号='" + ID1 + "'";
+                //    else
+                //        ADDs = "update " + TableName + " set " + tem_Value + " where 序号='" + ID2 + "'";
+            
+        }
+        #endregion
 
         //不使用的功能++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         #region  窗体的调用
@@ -139,41 +218,7 @@ namespace 测试工具助手.MyClass
         }
         #endregion
 
-        #region  自动编号
-        /// <summary>
-        /// 在添加信息时自动计算编号.
-        /// </summary>
-        /// <param name="TableName">表名</param>
-        /// <param name="ID">字段名</param>
-        /// <returns>返回String对象</returns>
-        public String GetAutocoding(string TableName, string ID)
-        {
-            //查找指定表中ID号为最大的记录
-            //SqlDataReader MyDR = MyDataClass.getcom("select max(" + ID + ") NID from " + TableName);
-            //int Num = 0;
-            //if (MyDR.HasRows)   //当查找到记录时
-            //{
-            //    MyDR.Read();    //读取当前记录
-            //    if (MyDR[0].ToString() == "")
-            //        return "0001";
-            //    Num = Convert.ToInt32(MyDR[0].ToString());  //将当前找到的最大编号转换成整数
-            //    ++Num;  //最大编号加1
-            //    string s = string.Format("{0:0000}", Num);  //将整数值转换成指定格式的字符串
-            //    return s;   //返回自动生成的编号
-            //}
-            //else
-            //{
-            //    return "0001";  //当数据表没有记录时，返回0001
-            //}
-
-            string s = DateTime.Now.ToString();  //将整数值转换成指定格式的字符串
-            //int s = 1234;
-            return s.ToString();   //返回自动生成的编号
-
-
-
-        }
-        #endregion
+        
 
         #region  向comboBox控件传递数据表中的数据
         /// <summary>
@@ -317,91 +362,7 @@ namespace 测试工具助手.MyClass
         }
         #endregion
 
-        #region  保存添加或修改的信息
-        /// <summary>
-        /// 保存添加或修改的信息.
-        /// </summary>
-        /// <param name="Sarr">数据表中的所有字段</param>
-        /// <param name="ID1">第一个字段值</param>
-        /// <param name="ID2">第二个字段值</param>
-        /// <param name="Contr">指定控件的数据集</param>
-        /// <param name="BoxName">要搜索的控件名称</param>
-        /// <param name="TableName">数据表名称</param>
-        /// <param name="n">控件的个数</param>
-        /// <param name="m">标识，用于判断是添加还是修改</param>
-        public void Part_SaveClass(string Sarr, string ID1, string ID2, Control.ControlCollection Contr, string BoxName, string TableName, int n, int m)
-        {
-            string tem_Field = "", tem_Value = "";
-            int p = 2;
-            if (m == 1)
-            {    //当m为1时，表示添加数据信息
-                if (ID1 != "" && ID2 == "")
-                { //根据参数值判断添加的字段
-                    tem_Field = "序号";
-                    tem_Value = "'" + ID1 + "'";
-                    p = 1;
-                }
-                else
-                {
-                    tem_Field = "Stu_ID,序号";
-                    tem_Value = "'" + ID1 + "','" + ID2 + "'";
-                }
-            }
-            else
-                if (m == 2)
-            {    //当m为2时，表示修改数据信息
-                if (ID1 != "" && ID2 == "")
-                { //根据参数值判断添加的字段
-                    tem_Value = "序号='" + ID1 + "'";
-                    p = 1;
-                }
-                else
-                    tem_Value = "Stu_ID='" + ID1 + "',序号='" + ID2 + "'";
-            }
-
-            if (m > 0)
-            { //生成部份添加、修改语句
-                string[] Parr = Sarr.Split(Convert.ToChar(','));
-                for (int i = p; i < n; i++)
-                {
-                    string sID = BoxName + i.ToString();    //通过BoxName参数获取要进行操作的控件名称
-                    foreach (Control C in Contr)
-                    {   //遍历控件集中的相关控件
-                        if (C.GetType().Name == "TextBox" | C.GetType().Name == "MaskedTextBox" | C.GetType().Name == "ComboBox")
-                            if (C.Name == sID)
-                            { //如果在控件集中找到相应的组件
-                                string Ctext = C.Text;
-                                if (C.GetType().Name == "MaskedTextBox")    //如果当前是MaskedTextBox控件
-                                    Ctext = Date_Format(C.Text);    //对当前控件的值进行格式化
-                                if (m == 1)
-                                {    //组合SQL语句中insert的相关语句
-                                    tem_Field = tem_Field + "," + Parr[i];
-                                    if (Ctext == "")
-                                        tem_Value = tem_Value + "," + "NULL";
-                                    else
-                                        tem_Value = tem_Value + "," + "'" + Ctext + "'";
-                                }
-                                if (m == 2)
-                                {    //组合SQL语句中update的相关语句
-                                    if (Ctext == "")
-                                        tem_Value = tem_Value + "," + Parr[i] + "=NULL";
-                                    else
-                                        tem_Value = tem_Value + "," + Parr[i] + "='" + Ctext + "'";
-                                }
-                            }
-                    }
-                }
-                ADDs = "";
-                if (m == 1) //生成SQL的添加语句
-                    ADDs = "insert into " + TableName + " (" + tem_Field + ") values(" + tem_Value + ")";
-                if (m == 2) //生成SQL的修改语句
-                    if (ID2 == "")  //根据ID2参数，判断修改语句的条件
-                        ADDs = "update " + TableName + " set " + tem_Value + " where 序号='" + ID1 + "'";
-                    else
-                        ADDs = "update " + TableName + " set " + tem_Value + " where 序号='" + ID2 + "'";
-            }
-        }
-        #endregion
+        
 
         #region  将当前表的数据信息显示在指定的控件上
         /// <summary>
@@ -815,6 +776,7 @@ namespace 测试工具助手.MyClass
         }
         #endregion
 
+<<<<<<< HEAD
         #region  将图片存储到数据库中
         /// <summary>
         /// 以二进制的形式将图片存储到数据库中.
@@ -834,6 +796,9 @@ namespace 测试工具助手.MyClass
 
         }
         #endregion
+=======
+        
+>>>>>>> 添加项目文件。
 
         #region  查询指定范围内生日与合同到期的职工
         /// <summary>

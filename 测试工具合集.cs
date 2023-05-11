@@ -899,19 +899,11 @@ namespace 测试工具助手
 
         #endregion
 
+        #region 数据库中image格式文件的存读取---------------------------------------------------------------
 
         public static byte[] imgBytesIn;  //用来存储图片的二进制数
-        private void but_image_Click(object sender, EventArgs e)
-        {
-            
-            //MemoryStream ms = new MemoryStream();
 
-            //Bitmap bmpt = new Bitmap(ms);   //将二进制流转化成图片格式
-
-            //S_Photo.Image = bmpt;   //SickPicture为pictureBox控件名称
-        }
-        #region  将图片转换成字节数组
-        public void Read_Image(OpenFileDialog openF, PictureBox MyImage)
+        public void Read_Image(OpenFileDialog openF, PictureBox MyImage)//将图片转换成字节数组
         {
             openF.Filter = "*.jpg|*.jpg|*.bmp|*.bmp";   //指定OpenFileDialog控件打开的文件格式
             if (openF.ShowDialog(this) == DialogResult.OK)  //如果打开了图片文件
@@ -931,23 +923,82 @@ namespace 测试工具助手
                 }
             }
         }
-        #endregion
 
-        private void but_image选择_Click(object sender, EventArgs e)
+
+        private void but_image选择_Click(object sender, EventArgs e)//选择图片
         {
             Read_Image(openFileDialog1, S_Photo);
         }
 
-        private void Img_Clear_Click(object sender, EventArgs e)
+        private void Img_Clear_Click(object sender, EventArgs e)//清除图片
         {
             S_Photo.Image = null;
             imgBytesIn = new byte[65536];
         }
 
-        private void Sut_Save_Click(object sender, EventArgs e)
+        private void Sut_Save_Click(object sender, EventArgs e)//保存至数据库
         {
             //通过MyModule公共类中r的SaveImage()方法将图片存入数据库中
-            MyMC.SaveImage("1", imgBytesIn);
+            string str= MyMC.GetAutocoding(textBox表名.Text, "ID");  //自动添加编号
+            //定义字符串变量，并存储将“职工基本信息表”中的所有字段
+            //string All_Field = "ID,Photo";
+            //int hold_n = 1; //判断当前是添加1，还是修改2操作
+            MyMC.Part_SaveClass(str, textBox表名.Text);
+            MyDataClass.getsqlcom(MyClass.MyModule.ADDs);
+            MyMC.SaveImage(str, imgBytesIn);
+        }
+
+
+        #region  显示数据表中的指定记录
+        /// <summary>
+        /// 动态读取指定的记录行，并进行显示.
+        /// </summary>
+        /// <param name="DGrid">DataGridView控件</param>
+        /// <returns>返回string对象</returns> 
+        public string Grid_Inof(DataGridView DGrid)
+        {
+            byte[] pic; //定义一个字节数组
+            //当DataGridView控件的记录>1时，将当前行中信息显示在相应的控件上
+            if (DGrid.RowCount > 1)
+            {
+                text_S0.Text = DGrid[0, DGrid.CurrentCell.RowIndex].Value.ToString();
+                //S_1.Text = DGrid[1, DGrid.CurrentCell.RowIndex].Value.ToString();
+
+                try
+                {
+                    //将数据库中的图片存入到字节数组中
+                    pic = (byte[])(MyDS_Grid.Tables[0].Rows[DGrid.CurrentCell.RowIndex][1]);
+                    MemoryStream ms = new MemoryStream(pic);			//将字节数组存入到二进制流中
+                    S_Photo.Image = Image.FromStream(ms);   //二进制流Image控件中显示
+                }
+                catch { S_Photo.Image = null; } //当出现错误时，将Image控件清空
+                return "";  
+            }
+            else
+            {
+                //使用MyMeans公共类中的Clear_Control()方法清空指定控件集中的相应控件
+                MyMC.Clear_Control(tabControl1.TabPages[0].Controls);
+                return "";
+            }
+        }
+        #endregion
+        private void but_image_Click(object sender, EventArgs e)
+        {
+            Grid_Inof(dataGridView1);
+        }
+
+        #endregion
+
+        private void Sut_Delete_Click(object sender, EventArgs e)
+        {
+            //Grid_Inof(dataGridView1);
+            if (dataGridView1.RowCount < 2) //判断dataGridView1控件中是否有记录
+            {
+                MessageBox.Show("数据表为空，不可以删除。");
+                return;
+            }
+            //删除职工信息表中的当前记录，及其他相关表中的信息
+            MyDataClass.getsqlcom("Delete Stuffbasic1 where ID='" + text_S0.Text.Trim() + "'");
         }
     }
 }

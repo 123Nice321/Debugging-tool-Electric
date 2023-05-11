@@ -121,6 +121,13 @@ namespace 测试工具助手
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.Sut_Save = new System.Windows.Forms.Button();
+            this.Img_Clear = new System.Windows.Forms.Button();
+            this.but_image选择 = new System.Windows.Forms.Button();
+            this.but_image = new System.Windows.Forms.Button();
+            this.text_S0 = new System.Windows.Forms.TextBox();
+            this.S_Photo = new System.Windows.Forms.PictureBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
@@ -172,6 +179,7 @@ namespace 测试工具助手
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+<<<<<<< HEAD
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.S_Photo = new System.Windows.Forms.PictureBox();
             this.text_image = new System.Windows.Forms.TextBox();
@@ -179,6 +187,10 @@ namespace 测试工具助手
             this.but_image选择 = new System.Windows.Forms.Button();
             this.Img_Clear = new System.Windows.Forms.Button();
             this.Sut_Save = new System.Windows.Forms.Button();
+=======
+            this.Sut_Delete = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+>>>>>>> 添加项目文件。
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -202,6 +214,8 @@ namespace 测试工具助手
             ((System.ComponentModel.ISupportInitialize)(this.axMsRDPClient)).BeginInit();
             this.panel6.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -224,7 +238,7 @@ namespace 测试工具助手
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1050, 646);
+            this.tabPage1.Size = new System.Drawing.Size(1131, 659);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "进制转换-ASCII";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -496,7 +510,7 @@ namespace 测试工具助手
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1050, 646);
+            this.tabPage2.Size = new System.Drawing.Size(1131, 659);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "串口调试助手";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -884,7 +898,7 @@ namespace 测试工具助手
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1050, 646);
+            this.tabPage3.Size = new System.Drawing.Size(1131, 659);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "CRC校验";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -963,7 +977,7 @@ namespace 测试工具助手
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1050, 646);
+            this.tabPage4.Size = new System.Drawing.Size(1131, 659);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Ping测试";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -982,7 +996,7 @@ namespace 测试工具助手
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1044, 49);
+            this.panel5.Size = new System.Drawing.Size(1125, 49);
             this.panel5.TabIndex = 34;
             // 
             // label20
@@ -1087,11 +1101,11 @@ namespace 测试工具助手
             this.txtCmd.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtCmd.Font = new System.Drawing.Font("楷体", 13F);
             this.txtCmd.ForeColor = System.Drawing.Color.White;
-            this.txtCmd.Location = new System.Drawing.Point(3, 55);
+            this.txtCmd.Location = new System.Drawing.Point(3, 68);
             this.txtCmd.Multiline = true;
             this.txtCmd.Name = "txtCmd";
             this.txtCmd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtCmd.Size = new System.Drawing.Size(1044, 588);
+            this.txtCmd.Size = new System.Drawing.Size(1125, 588);
             this.txtCmd.TabIndex = 33;
             // 
             // tabPage5
@@ -1101,7 +1115,7 @@ namespace 测试工具助手
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1050, 646);
+            this.tabPage5.Size = new System.Drawing.Size(1131, 659);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "局域网远程桌面";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1113,7 +1127,7 @@ namespace 测试工具助手
             this.axMsRDPClient.Location = new System.Drawing.Point(3, 3);
             this.axMsRDPClient.Name = "axMsRDPClient";
             this.axMsRDPClient.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMsRDPClient.OcxState")));
-            this.axMsRDPClient.Size = new System.Drawing.Size(1044, 574);
+            this.axMsRDPClient.Size = new System.Drawing.Size(1125, 574);
             this.axMsRDPClient.TabIndex = 2;
             // 
             // panel6
@@ -1129,9 +1143,9 @@ namespace 测试工具助手
             this.panel6.Controls.Add(this.label22);
             this.panel6.Controls.Add(this.label21);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(3, 583);
+            this.panel6.Location = new System.Drawing.Point(3, 596);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1044, 60);
+            this.panel6.Size = new System.Drawing.Size(1125, 60);
             this.panel6.TabIndex = 1;
             // 
             // button9
@@ -1237,6 +1251,80 @@ namespace 测试工具助手
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "数据库工具";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.label33);
+            this.groupBox10.Controls.Add(this.Sut_Delete);
+            this.groupBox10.Controls.Add(this.Sut_Save);
+            this.groupBox10.Controls.Add(this.Img_Clear);
+            this.groupBox10.Controls.Add(this.but_image选择);
+            this.groupBox10.Controls.Add(this.but_image);
+            this.groupBox10.Controls.Add(this.text_S0);
+            this.groupBox10.Controls.Add(this.S_Photo);
+            this.groupBox10.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox10.Location = new System.Drawing.Point(672, 163);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(453, 491);
+            this.groupBox10.TabIndex = 22;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "image格式转换成图片";
+            // 
+            // Sut_Save
+            // 
+            this.Sut_Save.Location = new System.Drawing.Point(208, 26);
+            this.Sut_Save.Name = "Sut_Save";
+            this.Sut_Save.Size = new System.Drawing.Size(67, 33);
+            this.Sut_Save.TabIndex = 70;
+            this.Sut_Save.Text = "添加";
+            this.Sut_Save.UseVisualStyleBackColor = true;
+            this.Sut_Save.Click += new System.EventHandler(this.Sut_Save_Click);
+            // 
+            // Img_Clear
+            // 
+            this.Img_Clear.Location = new System.Drawing.Point(128, 26);
+            this.Img_Clear.Name = "Img_Clear";
+            this.Img_Clear.Size = new System.Drawing.Size(74, 33);
+            this.Img_Clear.TabIndex = 69;
+            this.Img_Clear.Text = "清除";
+            this.Img_Clear.UseVisualStyleBackColor = true;
+            this.Img_Clear.Click += new System.EventHandler(this.Img_Clear_Click);
+            // 
+            // but_image选择
+            // 
+            this.but_image选择.Location = new System.Drawing.Point(10, 26);
+            this.but_image选择.Name = "but_image选择";
+            this.but_image选择.Size = new System.Drawing.Size(112, 33);
+            this.but_image选择.TabIndex = 3;
+            this.but_image选择.Text = "选择照片";
+            this.but_image选择.UseVisualStyleBackColor = true;
+            this.but_image选择.Click += new System.EventHandler(this.but_image选择_Click);
+            // 
+            // but_image
+            // 
+            this.but_image.Location = new System.Drawing.Point(326, 26);
+            this.but_image.Name = "but_image";
+            this.but_image.Size = new System.Drawing.Size(112, 33);
+            this.but_image.TabIndex = 2;
+            this.but_image.Text = "查看";
+            this.but_image.UseVisualStyleBackColor = true;
+            this.but_image.Click += new System.EventHandler(this.but_image_Click);
+            // 
+            // text_S0
+            // 
+            this.text_S0.Location = new System.Drawing.Point(52, 451);
+            this.text_S0.Name = "text_S0";
+            this.text_S0.Size = new System.Drawing.Size(70, 26);
+            this.text_S0.TabIndex = 1;
+            // 
+            // S_Photo
+            // 
+            this.S_Photo.Location = new System.Drawing.Point(14, 72);
+            this.S_Photo.Name = "S_Photo";
+            this.S_Photo.Size = new System.Drawing.Size(433, 369);
+            this.S_Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.S_Photo.TabIndex = 0;
+            this.S_Photo.TabStop = false;
             // 
             // tabControl2
             // 
@@ -1781,6 +1869,7 @@ namespace 测试工具助手
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Tag = "数据库工具用";
             // 
+<<<<<<< HEAD
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.Sut_Save);
@@ -1852,6 +1941,26 @@ namespace 测试工具助手
             this.Sut_Save.Text = "保存";
             this.Sut_Save.UseVisualStyleBackColor = true;
             this.Sut_Save.Click += new System.EventHandler(this.Sut_Save_Click);
+=======
+            // Sut_Delete
+            // 
+            this.Sut_Delete.Location = new System.Drawing.Point(139, 447);
+            this.Sut_Delete.Name = "Sut_Delete";
+            this.Sut_Delete.Size = new System.Drawing.Size(109, 30);
+            this.Sut_Delete.TabIndex = 72;
+            this.Sut_Delete.Text = "删除数据库";
+            this.Sut_Delete.UseVisualStyleBackColor = true;
+            this.Sut_Delete.Click += new System.EventHandler(this.Sut_Delete_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(20, 454);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(23, 16);
+            this.label33.TabIndex = 73;
+            this.label33.Text = "ID";
+>>>>>>> 添加项目文件。
             // 
             // 测试工具合集
             // 
@@ -1904,6 +2013,9 @@ namespace 测试工具助手
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tabPage6.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.S_Photo)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
@@ -2072,11 +2184,20 @@ namespace 测试工具助手
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button but_image;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox text_image;
+=======
+        private System.Windows.Forms.TextBox text_S0;
+>>>>>>> 添加项目文件。
         private System.Windows.Forms.PictureBox S_Photo;
         private System.Windows.Forms.Button but_image选择;
         private System.Windows.Forms.Button Img_Clear;
         private System.Windows.Forms.Button Sut_Save;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Button Sut_Delete;
+        private System.Windows.Forms.Label label33;
+>>>>>>> 添加项目文件。
     }
 }
 
