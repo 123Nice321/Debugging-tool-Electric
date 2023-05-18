@@ -104,42 +104,7 @@ namespace 测试工具助手.MyClass
             {
                 return "0001";  //当数据表没有记录时，返回0001
             }
-<<<<<<< HEAD
-=======
 
->>>>>>> 添加项目文件。
-
-        }
-        #endregion
-
-        #region  保存添加或修改的信息
-        /// <summary>
-        /// 保存添加或修改的信息.
-        /// </summary>
-        /// <param name="Sarr">数据表中的所有字段</param>
-        /// <param name="ID1">第一个字段值</param>
-        /// <param name="ID2">第二个字段值</param>
-        /// <param name="Contr">指定控件的数据集</param>
-        /// <param name="BoxName">要搜索的控件名称</param>
-        /// <param name="TableName">数据表名称</param>
-        /// <param name="n">控件的个数</param>
-        /// <param name="m">标识，用于判断是添加还是修改</param>
-        public void Part_SaveClass( string ID1,string TableName)
-        {
-            string tem_Field = "", tem_Value = "";
-
-            tem_Field = "ID";
-            tem_Value = "'" + ID1 + "'";
-            //生成SQL的添加语句
-            ADDs = "insert into " + TableName + " (" + tem_Field + ") values(" + tem_Value + ")";
-                //if (m == 2) //生成SQL的修改语句
-                //    if (ID2 == "")  //根据ID2参数，判断修改语句的条件
-                //        ADDs = "update " + TableName + " set " + tem_Value + " where 序号='" + ID1 + "'";
-                //    else
-                //        ADDs = "update " + TableName + " set " + tem_Value + " where 序号='" + ID2 + "'";
-            
-        }
-        #endregion
 
         }
         #endregion
@@ -811,32 +776,7 @@ namespace 测试工具助手.MyClass
         }
         #endregion
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        #region  将图片存储到数据库中
-        /// <summary>
-        /// 以二进制的形式将图片存储到数据库中.
-        /// </summary>
-        /// <param name="MID">编号</param>
-        /// <param name="p">图片的二进制形式</param>
-        public void SaveImage(string MID,byte[] p)
-        {
-            MyDataClass.con_open(MyClass.MyMeans.M_str_sqlcon);
-            StringBuilder strSql = new StringBuilder();
-            //strSql.Append
-            strSql.Append("update Stuffbasic1 Set Photo=@Photo where ID=" + MID);
-            SqlCommand cmd = new SqlCommand(strSql.ToString(), MyMeans.My_con);
-            cmd.Parameters.Add("@Photo ", SqlDbType.Binary).Value = p;
-            cmd.ExecuteNonQuery();
-            MyMeans.My_con.Close();
 
-        }
-        #endregion
-=======
-        
->>>>>>> 添加项目文件。
-=======
->>>>>>> 添加项目文件。
 
         #region  查询指定范围内生日与合同到期的职工
         /// <summary>
