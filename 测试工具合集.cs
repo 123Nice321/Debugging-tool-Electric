@@ -938,14 +938,21 @@ namespace 测试工具助手
 
         private void Sut_Save_Click(object sender, EventArgs e)//保存至数据库
         {
-            //通过MyModule公共类中r的SaveImage()方法将图片存入数据库中
-            string str= MyMC.GetAutocoding(textBox表名.Text, "ID");  //自动添加编号
-            //定义字符串变量，并存储将“职工基本信息表”中的所有字段
-            //string All_Field = "ID,Photo";
-            //int hold_n = 1; //判断当前是添加1，还是修改2操作
-            MyMC.Part_SaveClass(str, textBox表名.Text);
-            MyDataClass.getsqlcom(MyClass.MyModule.ADDs);
-            MyMC.SaveImage(str, imgBytesIn);
+            try
+            {
+                //通过MyModule公共类中r的SaveImage()方法将图片存入数据库中
+                string str = MyMC.GetAutocoding(textBox表名.Text, "ID");  //自动添加编号
+                                                                        //定义字符串变量，并存储将“职工基本信息表”中的所有字段
+                                                                        //string All_Field = "ID,Photo";
+                                                                        //int hold_n = 1; //判断当前是添加1，还是修改2操作
+                MyMC.Part_SaveClass(str, textBox表名.Text);
+                MyDataClass.getsqlcom(MyClass.MyModule.ADDs);
+                MyMC.SaveImage(str, imgBytesIn);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
